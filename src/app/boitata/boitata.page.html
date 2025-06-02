@@ -1,45 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Edição</ion-title>
-    <ion-menu-button></ion-menu-button>
+    <ion-buttons slot="start">
+      <ion-button (click)="voltar()">
+        <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Edição de Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <br><br>
-
-  <ion-item>
-    <ion-input class="custom-input" label="Usuário:" placeholder="Nome"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input class="custom-input" label="Email:" type="email" placeholder="email@domain.com"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input class="custom-input" label="Password" type="password" value="password"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input class="custom-input" label="Telefone:" type="tel" placeholder="888-888-8888"></ion-input>
-  </ion-item>
-
-  <ion-card-header>
-    <ion-card-title>Foto de Perfil</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-list>
-      <ion-item class="card-item-custom">
-        <ion-thumbnail slot="start">
-          <img class="avatar-custom" alt="boitata" src="https://contosdetodososcantos.com.br/wp-content/uploads/2023/05/Boitata-uma-das-maiores-lendas-do-folclore-brasileiro.jpg" />
-        </ion-thumbnail>
-        <ion-label>Usuário</ion-label>
-        <ion-button class="btn-custom" expand="block" (click)="imagens()">Mudar Avatar</ion-button>
+<ion-content [fullscreen]="true" class="edicao-content">
+  <div class="edicao-card">
+    <div class="avatar-container">
+      <img class="avatar-custom" alt="boitata" src="https://contosdetodososcantos.com.br/wp-content/uploads/2023/05/Boitata-uma-das-maiores-lendas-do-folclore-brasileiro.jpg" />
+      <ion-button class="avatar-btn" size="small" (click)="imagens()">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <form>
+      <ion-item lines="none">
+        <ion-label position="floating">Usuário</ion-label>
+        <ion-input class="custom-input" placeholder="Nome"></ion-input>
       </ion-item>
-    </ion-list>
-  </ion-card-content>
-  <ion-button expand="block" color="primary" shape="round" (click)="voltar()" style="margin-top: 24px;">
-  <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
-  Voltar
-</ion-button>
+      <ion-item lines="none">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input class="custom-input" type="email" placeholder="email@domain.com"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input class="custom-input" type="password" placeholder="Senha"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating">Telefone</ion-label>
+        <ion-input class="custom-input" type="tel" placeholder="(99) 99999-9999"></ion-input>
+      </ion-item>
+      <ion-button expand="block" color="primary" class="salvar-btn" style="margin-top: 24px;">
+        Salvar Alterações
+      </ion-button>
+    </form>
+  </div>
 </ion-content>

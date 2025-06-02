@@ -10,23 +10,23 @@
 <ion-content [fullscreen]="true">
   <ion-card class="card-custom">
     <ion-list>
-      <ion-item class="card-item-custom">
-        <ion-label></ion-label>
-      </ion-item>
-      <ion-item class="card-item-custom">
+      <ion-item *ngFor="let atividade of atividades">
+        <ion-avatar slot="start" *ngIf="atividade.tipo === 'powerup'">
+          <ion-icon [name]="atividade.powerupIcone || 'flash'" style="font-size: 2em; color: var(--ion-color-primary);"></ion-icon>
+        </ion-avatar>
         <ion-label>
-          O usuário jogou 10 partidas e perdeu. Tempo médio de 30 minutos
+          <h3>{{ atividade.descricao }}</h3>
+          <p *ngIf="atividade.detalhe">{{ atividade.detalhe }}</p>
+          <p class="data">{{ atividade.data | date:'dd/MM/yyyy HH:mm' }}</p>
         </ion-label>
       </ion-item>
-      <ion-item class="card-item-custom">
-        <ion-label class="ion-text-nowrap">
-          O usuário reportou um defeito no jogo às 10 horas.
-        </ion-label>
+      <ion-item *ngIf="atividades.length === 0">
+        <ion-label>Nenhuma atividade encontrada.</ion-label>
       </ion-item>
     </ion-list>
   </ion-card>
   <ion-button expand="block" color="primary" shape="round" class="custom-btn" (click)="voltar()" style="margin-top: 24px;">
-  <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
-  Voltar
-</ion-button>
+    <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+    Voltar
+  </ion-button>
 </ion-content>

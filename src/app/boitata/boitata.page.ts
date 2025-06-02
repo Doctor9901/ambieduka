@@ -17,6 +17,6 @@ imagens() {
   this.route.navigate(['/imagens'])
 }
 voltar() {
-  window.history.back();
+  this.route.navigate(['/perfil']);
 }
 }
