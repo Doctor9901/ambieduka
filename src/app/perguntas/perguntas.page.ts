@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { PERGUNTAS } from './perguntas.data';
 
 @Component({
   selector: 'app-perguntas',
@@ -7,30 +8,57 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./perguntas.page.scss'],
   standalone: false,
 })
-export class PerguntasPage implements OnInit {
+export class PerguntasPage {
+  perguntas = PERGUNTAS;
+  perguntaAtual = 0;
+  respostaSelecionada: number | null = null;
+  resultado: boolean | null = null;
 
-  async pergunta1() {
+  // Lista única das etapas, na ordem de aparição
+  etapas = Array.from(new Set(this.perguntas.map(p => p.etapa)));
+
+  constructor(private alertController: AlertController) {}
+
+  async selecionarResposta(idx: number) {
+    this.respostaSelecionada = idx;
+    const correta = this.perguntas[this.perguntaAtual].resposta;
+    this.resultado = idx === correta;
+
     const alert = await this.alertController.create({
-      header: 'Você Errou',
-      message: 'A resposta correta e a letra: B',
-      buttons: ['Action'],
+      header: this.resultado ? 'Você Acertou!' : 'Você Errou',
+      message: this.resultado
+        ? 'Parabéns, resposta correta!'
+        : `A resposta correta é: ${this.letraAlternativa(correta)} - ${this.perguntas[this.perguntaAtual].alternativas[correta]}`,
+      buttons: [{
+        text: 'OK',
+        handler: () => {
+          this.proximaPergunta();
+        }
+      }],
+      backdropDismiss: false
     });
 
     await alert.present();
   }
 
-  async pergunta1_1() {
-    const alert = await this.alertController.create({
-      header: 'Você Acertou',
-      message: 'A planta possui nutrientes e tal.',
-      buttons: ['Action'],
-    });
-
-    await alert.present();
-  }
-  constructor(private alertController: AlertController) { }
-
-  ngOnInit() {
+  proximaPergunta() {
+    if (this.perguntaAtual < this.perguntas.length - 1) {
+      this.perguntaAtual++;
+      this.respostaSelecionada = null;
+      this.resultado = null;
+    } else {
+      // Opcional: mostrar mensagem de conclusão
+    }
   }
 
+  letraAlternativa(i: number): string {
+    return String.fromCharCode(65 + i); // 65 = 'A'
+  }
+
+  numeroEtapa(etapa: string): number {
+    return this.etapas.indexOf(etapa) + 1;
+  }
+  voltar() {
+    window.history.back();
+}
 }

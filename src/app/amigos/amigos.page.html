@@ -2,59 +2,87 @@
   <ion-toolbar>
     <ion-title>Amigos</ion-title>
     <ion-buttons slot="primary" (click)="adicionar()">
-      <ion-button>Procurar
-        <ion-icon slot="end" name="add">
-        </ion-icon>
+      <ion-button class="btn-custom">Procurar
+        <ion-icon slot="end" name="add"></ion-icon>
       </ion-button>
     </ion-buttons>
-     <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <br><br>
-  <ion-card-header>
-    <ion-card-title>Online</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-list>
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Jogador 1</ion-label>
-        <ion-button expand="block">Remover</ion-button>
-      </ion-item>
+  <div class="lista-amigos">
+    <div class="form-procurar">
+      <ion-input placeholder="Nome do amigo..." [(ngModel)]="nomeProcurado"></ion-input>
+      <ion-button class="btn-procurar" (click)="procurarAmigo()">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </div>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Jogador 2</ion-label>
-        <ion-button expand="block">Remover</ion-button>
-      </ion-item>
+    <div class="status-titulo">Online</div>
+    <ion-card-content>
+      <ion-list>
+        <ion-item class="card-item-custom">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Jogador 1</ion-label>
+          <ion-button class="btn-custom" expand="block">Remover</ion-button>
+        </ion-item>
 
-      <ion-card-header>
-        <ion-card-title>offline</ion-card-title>
-      </ion-card-header>
+        <ion-item class="card-item-custom">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Jogador 2</ion-label>
+          <ion-button class="btn-custom" expand="block">Remover</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Jogador 3</ion-label>
-        <ion-button expand="block">Remover</ion-button>
-      </ion-item>
+    <div class="status-titulo">Offline</div>
+    <ion-card-content>
+      <ion-list>
+        <ion-item class="card-item-custom">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Jogador 3</ion-label>
+          <ion-button class="btn-custom" expand="block">Remover</ion-button>
+        </ion-item>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Jogador 4</ion-label>
-        <ion-button expand="block">Remover</ion-button> 
-      </ion-item>
-    </ion-list>
-  </ion-card-content>
+        <ion-item class="card-item-custom" lines="none">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>Jogador 4</ion-label>
+          <ion-button class="btn-custom" expand="block">Remover</ion-button> 
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-card class="card-custom">
+      <ion-list>
+        <ion-item class="card-item-custom">
+          <ion-avatar slot="start">
+            <img class="avatar-custom" src="..." />
+          </ion-avatar>
+          <ion-label>
+            <h2 class="title-medium">Nome do Amigo</h2>
+            <p>Descrição</p>
+          </ion-label>
+          <ion-button class="btn-custom" expand="block">Remover</ion-button>
+        </ion-item>
+        <!-- Repita para outros amigos -->
+      </ion-list>
+    </ion-card>
+    <ion-button class="btn-custom" expand="block">Procurar</ion-button>
+    <ion-button expand="block" color="primary" shape="round" (click)="voltar()" style="margin-top: 24px;">
+      <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+      Voltar
+    </ion-button>
+  </div>
 </ion-content>

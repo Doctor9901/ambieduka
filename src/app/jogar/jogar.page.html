@@ -1,20 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Jogar</ion-title>
-     <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<br><br>
-<ion-button expand="block" id="present-alert" (click)="perguntas()">Começar</ion-button>
-<ion-alert
-  trigger="present-alert"
-  header="Por Favor Insira suas Informações"
-  [buttons]="alertButtons"
-  [inputs]="alertInputs"
-></ion-alert>
-
+  <br><br>
+  <ion-button expand="block" id="present-alert" class="btn-custom" (click)="perguntas()">Começar</ion-button>
+  <ion-button expand="block" color="primary" shape="round" class="custom-btn" (click)="voltar()" style="margin-top: 24px;">
+  <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+  Voltar
+</ion-button>
 </ion-content>

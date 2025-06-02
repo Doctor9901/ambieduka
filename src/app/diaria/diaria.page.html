@@ -1,76 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Recompensas Diária</ion-title>
-     <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-  <ion-card-header>
-    <ion-card-title>Resgate</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
+  <ion-card class="card-custom">
+    <h1 class="title-large">Recompensa Diária</h1>
     <ion-list>
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Escudo" src="https://img.freepik.com/premium-psd/police-sign-3d-graphic-illustration_551318-1959.jpg" />
-        </ion-thumbnail>
-        <ion-label>Segunda-Feira</ion-label>
-        <ion-button expand="block" (click)="segunda()">Obter</ion-button>
+      <ion-item class="card-item-custom">
+        <ion-label>Segunda-feira</ion-label>
+        <ion-button class="btn-custom" expand="block" (click)="segunda()">Obter</ion-button>
       </ion-item>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Balde iniciante" src="https://th.bing.com/th/id/OIP.B5Llfh5H48htHEG6DJqwMwHaEJ?w=1200&h=673&rs=1&pid=ImgDetMain" />
-        </ion-thumbnail>
-        <ion-label>Terça-Feira</ion-label>
-        <ion-button expand="block" (click)="terca()">Obter</ion-button>
+      <ion-item class="card-item-custom">
+        <ion-label>Terça-feira</ion-label>
+        <ion-button class="btn-custom" expand="block" (click)="terca()">Obter</ion-button>
       </ion-item>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Dobro de exp" src="https://n4g.com/articles/wp-content/uploads/2023/11/fortnite-xp.jpg" />
-        </ion-thumbnail>
+      <ion-item class="card-item-custom">
         <ion-label>Quarta-feira</ion-label>
-        <ion-button expand="block" (click)="quarta()">Obter</ion-button>
+        <ion-button class="btn-custom" expand="block" (click)="quarta()">Obter</ion-button>
       </ion-item>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Dica" src="https://st3.depositphotos.com/1007566/18644/v/600/depositphotos_186446410-stock-illustration-bright-question-mark-image.jpg" />
-        </ion-thumbnail>
+      <ion-item class="card-item-custom">
         <ion-label>Quinta-feira</ion-label>
-        <ion-button expand="block" (click)="quinta()">Obter</ion-button>
+        <ion-button class="btn-custom" expand="block" (click)="quinta()">Obter</ion-button>
       </ion-item>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Fertilizante" src="https://img.freepik.com/premium-vector/organic-plants-fertilizer-flat-illustration_82574-11297.jpg?w=1060" />
-        </ion-thumbnail>
+      <ion-item class="card-item-custom">
         <ion-label>Sexta-feira</ion-label>
-        <ion-button expand="block" (click)="sexta()">Obter</ion-button>
+        <ion-button class="btn-custom" expand="block" (click)="sexta()">Obter</ion-button>
       </ion-item>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Pacotes de Plantas" src="https://static.vecteezy.com/system/resources/previews/017/004/605/original/set-of-floral-elements-with-hand-drawn-flowers-and-leaves-flower-graphic-design-herbs-and-wildflowers-collection-illustration-10-eps-vector.jpg"/>
-        </ion-thumbnail>
+      <ion-item class="card-item-custom">
         <ion-label>Sabádo</ion-label>
-        <ion-button expand="block" (click)="sabado()">Obter</ion-button>
+        <ion-button class="btn-custom" expand="block" (click)="sabado()">Obter</ion-button>
       </ion-item>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Gemas" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/397f0a77659967.5c8e7351a6801.jpg" />
-        </ion-thumbnail>
+      <ion-item class="card-item-custom">
         <ion-label>Domingo</ion-label>
-        <ion-button expand="block" (click)="domingo()">Obter</ion-button>
+        <ion-button class="btn-custom" expand="block" (click)="domingo()">Obter</ion-button>
       </ion-item>
     </ion-list>
-  </ion-card-content>
-</ion-card>
-
+  </ion-card>
+  <ion-button expand="block" color="primary" shape="round" class="custom-btn" (click)="voltar()" style="margin-top: 24px;">
+  <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+  Voltar
+</ion-button>
 </ion-content>

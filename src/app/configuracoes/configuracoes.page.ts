@@ -12,5 +12,8 @@ export class ConfiguracoesPage implements OnInit {
 
   ngOnInit() {
   }
+  voltar() {
+    window.history.back();
+  }
 
 }

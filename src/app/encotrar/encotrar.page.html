@@ -1,55 +1,73 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Encotrar</ion-title>
-    <ion-buttons slot="primary" (click)="voltar()">
-      <ion-button>Voltar
-        <ion-icon slot="end" name="add"></ion-icon>
-      </ion-button>
+    <ion-title>Encontrar Amigos</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-     <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <br><br>
-  <ion-card-header>
-    <ion-card-title>Online</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
+  <ion-card class="card-custom">
     <ion-list>
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Jogador 1</ion-label>
-        <ion-button expand="block">Adicionar</ion-button>
+      <ion-item class="card-item-custom">
+        <ion-avatar slot="start">
+          <img class="avatar-custom" src="assets/img/amigo1.jpg" />
+        </ion-avatar>
+        <ion-label>
+          <h2 class="title-medium">Nome do Usuário</h2>
+          <p>Descrição</p>
+        </ion-label>
+        <ion-button class="btn-custom" expand="block">Adicionar</ion-button>
       </ion-item>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Jogador 2</ion-label>
-        <ion-button expand="block">Adicionar</ion-button>
+      <ion-item class="card-item-custom">
+        <ion-avatar slot="start">
+          <img class="avatar-custom" src="assets/img/amigo2.jpg" />
+        </ion-avatar>
+        <ion-label>
+          <h2 class="title-medium">Jogador 1</h2>
+          <p>Descrição do jogador 1</p>
+        </ion-label>
+        <ion-button class="btn-custom" expand="block">Adicionar</ion-button>
       </ion-item>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Jogador 3</ion-label>
-        <ion-button expand="block">Adicionar</ion-button>
+      <ion-item class="card-item-custom">
+        <ion-avatar slot="start">
+          <img class="avatar-custom" src="assets/img/amigo3.jpg" />
+        </ion-avatar>
+        <ion-label>
+          <h2 class="title-medium">Jogador 2</h2>
+          <p>Descrição do jogador 2</p>
+        </ion-label>
+        <ion-button class="btn-custom" expand="block">Adicionar</ion-button>
       </ion-item>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Jogador 4</ion-label>
-        <ion-button expand="block">Adicionar</ion-button>
+      <ion-item class="card-item-custom">
+        <ion-avatar slot="start">
+          <img class="avatar-custom" src="assets/img/amigo4.jpg" />
+        </ion-avatar>
+        <ion-label>
+          <h2 class="title-medium">Jogador 3</h2>
+          <p>Descrição do jogador 3</p>
+        </ion-label>
+        <ion-button class="btn-custom" expand="block">Adicionar</ion-button>
+      </ion-item>
+
+      <ion-item class="card-item-custom">
+        <ion-avatar slot="start">
+          <img class="avatar-custom" src="assets/img/amigo5.jpg" />
+        </ion-avatar>
+        <ion-label>
+          <h2 class="title-medium">Jogador 4</h2>
+          <p>Descrição do jogador 4</p>
+        </ion-label>
+        <ion-button class="btn-custom" expand="block">Adicionar</ion-button>
       </ion-item>
     </ion-list>
-  </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" color="primary" shape="round" class="custom-btn" (click)="voltar()" style="margin-top: 24px;">
+  <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+  Voltar
+</ion-button>
 </ion-content>

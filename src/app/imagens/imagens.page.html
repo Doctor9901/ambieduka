@@ -1,7 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Avatares Disponiveis</ion-title>
-    <ion-menu-button></ion-menu-button>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -9,29 +11,33 @@
   <br><br>
   <ion-card-content>
     <ion-list>
-      <ion-item>
+      <ion-item class="card-item-custom">
         <ion-thumbnail slot="start">
-          <img alt="Curupira" src="https://th.bing.com/th/id/OIP.GwKvkFOuvg1p44_Tw6e4lwHaEK?rs=1&pid=ImgDetMain" />
+          <img class="avatar-custom" alt="Curupira" src="https://th.bing.com/th/id/OIP.GwKvkFOuvg1p44_Tw6e4lwHaEK?rs=1&pid=ImgDetMain" />
         </ion-thumbnail>
         <ion-label>Curupira</ion-label>
-        <ion-button expand="block" (click)="curupira()">Escolher</ion-button>
+        <ion-button expand="block" class="btn-custom" (click)="curupira()">Escolher</ion-button>
       </ion-item>
 
-      <ion-item>
+      <ion-item class="card-item-custom">
         <ion-thumbnail slot="start">
-          <img alt="Caipora" src="https://th.bing.com/th/id/OIP.TxElwfVun2oHnlnAfieVFQAAAA?rs=1&pid=ImgDetMain"/>
+          <img class="avatar-custom" alt="Caipora" src="https://th.bing.com/th/id/OIP.TxElwfVun2oHnlnAfieVFQAAAA?rs=1&pid=ImgDetMain"/>
         </ion-thumbnail>
         <ion-label>Caipora</ion-label>
-        <ion-button expand="block" (click)="caipora()">Escolher</ion-button>
+        <ion-button expand="block" class="btn-custom" (click)="caipora()">Escolher</ion-button>
       </ion-item>
 
-      <ion-item>
+      <ion-item class="card-item-custom">
         <ion-thumbnail slot="start">
-          <img alt="Boitatá" src="https://contosdetodososcantos.com.br/wp-content/uploads/2023/05/Boitata-uma-das-maiores-lendas-do-folclore-brasileiro.jpg"/>
+          <img class="avatar-custom" alt="Boitatá" src="https://contosdetodososcantos.com.br/wp-content/uploads/2023/05/Boitata-uma-das-maiores-lendas-do-folclore-brasileiro.jpg"/>
         </ion-thumbnail>
         <ion-label>Boitatá</ion-label>
-        <ion-button expand="block" (click)="boitata()">Escolher</ion-button>
+        <ion-button expand="block" class="btn-custom" (click)="boitata()">Escolher</ion-button>
       </ion-item>
     </ion-list>
   </ion-card-content>
+  <ion-button expand="block" color="primary" shape="round" class="custom-btn" (click)="voltar()" style="margin-top: 24px;">
+  <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+  Voltar
+</ion-button>
 </ion-content>

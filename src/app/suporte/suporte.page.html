@@ -1,32 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Suporte</ion-title>
-     <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <br><br>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form [formGroup]="formFeedback">
     <ion-item>
-      <ion-input label="Nome:"></ion-input>
+      <ion-input label="Nome" labelPlacement="floating" formControlName="nome"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Sobrenome:"></ion-input>
+      <ion-input label="Sobrenome" labelPlacement="floating" formControlName="sobrenome"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-toggle>
+    <ion-item lines="none">
+      <ion-toggle formControlName="notificacoes">
         <ion-label>Ativa Notificações</ion-label>
       </ion-toggle>
     </ion-item>
-
     <ion-item>
-      <ion-textarea label="Comentário" labelPlacement="floating" rows="5"></ion-textarea>
+      <ion-textarea label="Comentário" labelPlacement="floating" rows="5" formControlName="comentario"></ion-textarea>
     </ion-item>
-    <ion-button expand="block" (click)="suporte()">Enviar Feedback</ion-button>
-
+    <ion-button expand="block" color="primary" shape="round" class="custom-btn" (click)="suporte()" [disabled]="formFeedback.invalid">
+      Enviar Feedback
+    </ion-button>
+  </form>
   <ion-note color="medium" class="ion-margin-horizontal">
     Seus comentários serão mantidos anônimos e serão usados apenas para melhorar a confiabilidade de nossos produtos.
   </ion-note>
+  <ion-button expand="block" color="primary" shape="round" class="custom-btn" (click)="voltar()" style="margin-top: 24px;">
+    <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+    Voltar
+  </ion-button>
 </ion-content>

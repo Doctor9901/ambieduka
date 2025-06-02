@@ -8,12 +8,23 @@ import { Router } from '@angular/router';
   standalone: false,
 })
 export class AmigosPage implements OnInit {
+  nomeProcurado = '';
 
-  constructor(private rota:Router) { }
+  constructor(private rota: Router) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  adicionar() {
+    this.rota.navigate(['/encotrar']);
   }
-adicionar() {
-  this.rota.navigate(['/encotrar'])
-}
+  voltar() {
+    window.history.back();
+  }
+
+  procurarAmigo() {
+    // lógica de busca
+    if (this.nomeProcurado.trim()) {
+      // Buscar amigo
+    }
+  }
 }

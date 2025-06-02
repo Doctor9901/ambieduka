@@ -1,17 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Opções</ion-title>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+    <ion-title>Ferramentas</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <br><br>
-  <br><br>
-  <ion-button expand="block" (click)="diaria()">Resgate de Recompensa Diária</ion-button>
-  <ion-button expand="block" (click)="herois()">Escolher outro Herói</ion-button>
-  <ion-button expand="block" (click)="loja()">Loja de Itens</ion-button>
-  <ion-button expand="block" (click)="glossario()">Glossário de Plantas</ion-button>
+  <ion-list>
+    <ion-item>
+      <ion-label>Resgate de Recompensa Diária</ion-label>
+      <ion-button class="btn-custom" expand="block" (click)="diaria()">Acessar</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Escolher outro Herói</ion-label>
+      <ion-button class="btn-custom" expand="block" (click)="herois()">Acessar</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Loja de Itens</ion-label>
+      <ion-button class="btn-custom" expand="block" (click)="loja()">Acessar</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Glossário de Plantas</ion-label>
+      <ion-button class="btn-custom" expand="block" (click)="glossario()">Acessar</ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>

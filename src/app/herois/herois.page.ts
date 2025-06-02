@@ -42,5 +42,7 @@ async curupira() {
 
   ngOnInit() {
   }
-
+  voltar() {
+    window.history.back();
+}
 }
