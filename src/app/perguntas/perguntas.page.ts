@@ -1,6 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { PERGUNTAS } from './perguntas.data';
+
+// Defina a interface Pergunta
+interface Pergunta {
+  texto: string;
+  alternativas: string[];
+  respostaCorreta: number;
+  etapa?: string;
+}
 
 @Component({
   selector: 'app-perguntas',
@@ -132,6 +139,8 @@ export class PerguntasPage implements OnInit {
     }
   ];
 
+  pontuacao = 0; // Adicione esta propriedade
+
   perguntaAtual = 0;
   respostaSelecionada: number | null = null;
   resultado: boolean | null = null;
@@ -159,9 +168,8 @@ export class PerguntasPage implements OnInit {
       }]
     });
 
-  await alert.present();
-}
-// ...existing code...
+    await alert.present();
+  }
 
   proximaPergunta() {
     if (this.perguntaAtual < this.perguntas.length - 1) {
