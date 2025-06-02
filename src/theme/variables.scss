@@ -1,2 +1,85 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+  /* Paleta de cores */
+  --color-primary: #3a9157;
+  --color-primary-dark: #27663b;
+  --color-secondary: #b8eac7;
+  --color-bg: #d6f5e3; // verde claro mais destacado
+  --color-white: #fff;
+  --color-error: #e53935;
+  --color-text: #23402a;
+  --color-card: #ffffff; // branco puro para cards
+  --color-input-bg: #f3f8f4; // quase branco para inputs
+
+  /* Cores do Ionic (para integração com componentes) */
+  --ion-color-primary: #3a9157;
+  --ion-color-primary-rgb: 58,145,87;
+  --ion-color-primary-contrast: #fff;
+  --ion-color-primary-shade: #27663b;
+  --ion-color-primary-tint: #4bb96e;
+  --ion-color-secondary: #b8eac7;
+  --ion-background-color: #d6f5e3; // fundo global do Ionic
+  --ion-text-color: #23402a;
+
+  /* Tipografia */
+  --font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  --font-size-title: 2rem;
+  --font-size-subtitle: 1.2rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.9rem;
+
+  /* Bordas e espaçamentos */
+  --border-radius: 16px;
+  --input-radius: 10px;
+  --button-radius: 12px;
+  --card-padding: 24px;
+  --gap: 16px;
+  --section-gap: 32px;
+
+  /* Sombras */
+  --shadow-xs: 0 1px 2px rgba(60,120,80,0.04);
+  --shadow-sm: 0 2px 8px rgba(60,120,80,0.07);
+  --shadow-md: 0 4px 16px rgba(58,145,87,0.12);
+  --shadow-lg: 0 8px 32px rgba(58,145,87,0.18);
+
+  /* Espaçamentos */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Bordas */
+  --border-color: #e0eae3;
+  --border-width: 1px;
+
+  /* Estados */
+  --color-hover: #4bb96e;
+  --color-focus: #27663b;
+  --color-disabled: #b8eac7;
+
+  /* Gradientes */
+  --bg-gradient: linear-gradient(135deg, #eafaf0 0%, #b8eac7 100%);
+
+  /* Ícones */
+  --icon-size: 24px;
+  --icon-color: var(--color-primary);
+
+  /* Z-index */
+  --z-menu: 1000;
+  --z-modal: 1100;
+  --z-tooltip: 1200;
+
+  /* Botões customizados */
+  --btn-radius: 16px;
+  --btn-padding: 14px 0;
+  --btn-font: 'Montserrat', Arial, Helvetica, sans-serif;
+  --btn-shadow: 0 4px 16px rgba(58,145,87,0.12);
+  --btn-gradient: linear-gradient(90deg, #3a9157 0%, #4bb96e 100%);
+
+  /* Avatar */
+  --avatar-size: 56px;
+  --avatar-border: 2px solid var(--color-primary);
+}

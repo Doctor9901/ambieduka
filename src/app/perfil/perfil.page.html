@@ -1,18 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Perfil</ion-title>
-     <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <br><br>
   <br><br>
-  <ion-button expand="block" (click)="edicao()">Editar Perfil</ion-button>
-  <ion-button expand="block" (click)="historico()">Histórico de Atividades</ion-button>
-  <ion-button expand="block" (click)="configuracoes()">Configurações de Privacidade e Segurança</ion-button>
-  <ion-button expand="block" (click)="suporte()">Suporte</ion-button>
-  
+  <ion-button expand="block" class="btn-custom" (click)="edicao()">Editar Perfil</ion-button>
+  <ion-button expand="block" class="btn-custom" (click)="historico()">Histórico de Atividades</ion-button>
+  <ion-button expand="block" class="btn-custom" (click)="configuracoes()">Configurações de Privacidade e Segurança</ion-button>
+  <ion-button expand="block" class="btn-custom" (click)="suporte()">Suporte</ion-button>
 </ion-content>

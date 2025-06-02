@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Adicione ReactiveFormsModule
 import { IonicModule } from '@ionic/angular';
 
 import { SuportePageRoutingModule } from './suporte-routing.module';
@@ -12,6 +11,7 @@ import { SuportePage } from './suporte.page';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule, // Adicione aqui
     IonicModule,
     SuportePageRoutingModule
   ],

@@ -1,75 +1,79 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Loja</ion-title>
-     <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-  <ion-card-header>
-    <ion-card-title>Gemas: 0</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-list>
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Escudo de proteção" src="https://img.freepik.com/premium-psd/police-sign-3d-graphic-illustration_551318-1959.jpg" />
-        </ion-thumbnail>
-        <ion-label>Escudo</ion-label>
-        <ion-button expand="block" (click)="escudo()">50 gemas</ion-button>
-      </ion-item>
+  <ion-card class="card-custom">
+    <ion-card-header>
+      <ion-card-title>Gemas: 0</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item class="card-item-custom">
+          <ion-thumbnail slot="start">
+            <img alt="Escudo de proteção" src="https://img.freepik.com/premium-psd/police-sign-3d-graphic-illustration_551318-1959.jpg" />
+          </ion-thumbnail>
+          <ion-label>Escudo</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="escudo()">50 gemas</ion-button>
+        </ion-item>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="balde iniciante" src="https://st2.depositphotos.com/1074529/44603/v/450/depositphotos_446033072-stock-illustration-plastic-and-metal-buckets-set.jpg" />
-        </ion-thumbnail>
-        <ion-label>Balde</ion-label>
-        <ion-button expand="block" (click)="balde()">50 gemas</ion-button>
-      </ion-item>
+        <ion-item class="card-item-custom">
+          <ion-thumbnail slot="start">
+            <img alt="balde iniciante" src="https://st2.depositphotos.com/1074529/44603/v/450/depositphotos_446033072-stock-illustration-plastic-and-metal-buckets-set.jpg" />
+          </ion-thumbnail>
+          <ion-label>Balde</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="balde()">50 gemas</ion-button>
+        </ion-item>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="exp" src="https://n4g.com/articles/wp-content/uploads/2023/11/fortnite-xp.jpg" />
-        </ion-thumbnail>
-        <ion-label>Dobro de Exp</ion-label>
-        <ion-button expand="block" (click)="dobro()">50 gemas</ion-button>
-      </ion-item>
-  
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Dica" src="https://st3.depositphotos.com/1007566/18644/v/600/depositphotos_186446410-stock-illustration-bright-question-mark-image.jpg" />
-        </ion-thumbnail>
-        <ion-label>Dica</ion-label>
-        <ion-button expand="block" (click)="dica()">150 gemas</ion-button>
-      </ion-item>
+        <ion-item class="card-item-custom">
+          <ion-thumbnail slot="start">
+            <img alt="exp" src="https://n4g.com/articles/wp-content/uploads/2023/11/fortnite-xp.jpg" />
+          </ion-thumbnail>
+          <ion-label>Dobro de Exp</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="dobro()">50 gemas</ion-button>
+        </ion-item>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Boitatá" src="https://contosdetodososcantos.com.br/wp-content/uploads/2023/05/Boitata-uma-das-maiores-lendas-do-folclore-brasileiro.jpg" />
-        </ion-thumbnail>
-        <ion-label>Boitatá</ion-label>
-        <ion-button expand="block" (click)="boitata()">2500 gemas</ion-button>
-      </ion-item>
+        <ion-item class="card-item-custom" lines="none">
+          <ion-thumbnail slot="start">
+            <img alt="Dica" src="https://st3.depositphotos.com/1007566/18644/v/600/depositphotos_186446410-stock-illustration-bright-question-mark-image.jpg" />
+          </ion-thumbnail>
+          <ion-label>Dica</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="dica()">150 gemas</ion-button>
+        </ion-item>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Fertilizante" src="https://img.freepik.com/premium-vector/organic-plants-fertilizer-flat-illustration_82574-11297.jpg?w=1060" />
-        </ion-thumbnail>
-        <ion-label>Fertilizante</ion-label>
-        <ion-button expand="block" (click)="fertilizante()">100 gemas</ion-button>
-      </ion-item>
+        <ion-item class="card-item-custom" lines="none">
+          <ion-thumbnail slot="start">
+            <img alt="Boitatá" src="https://contosdetodososcantos.com.br/wp-content/uploads/2023/05/Boitata-uma-das-maiores-lendas-do-folclore-brasileiro.jpg" />
+          </ion-thumbnail>
+          <ion-label>Boitatá</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="boitata()">2500 gemas</ion-button>
+        </ion-item>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Pacote de Plantas" src="https://static.vecteezy.com/system/resources/previews/017/004/605/original/set-of-floral-elements-with-hand-drawn-flowers-and-leaves-flower-graphic-design-herbs-and-wildflowers-collection-illustration-10-eps-vector.jpg" />
-        </ion-thumbnail>
-        <ion-label>Pacote de Plantas</ion-label>
-        <ion-button expand="block" (click)="pacote()">1000 gemas</ion-button>
-      </ion-item>
-    </ion-list>
-  </ion-card-content>
-</ion-card>
+        <ion-item class="card-item-custom" lines="none">
+          <ion-thumbnail slot="start">
+            <img alt="Fertilizante" src="https://img.freepik.com/premium-vector/organic-plants-fertilizer-flat-illustration_82574-11297.jpg?w=1060" />
+          </ion-thumbnail>
+          <ion-label>Fertilizante</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="fertilizante()">100 gemas</ion-button>
+        </ion-item>
+
+        <ion-item class="card-item-custom" lines="none">
+          <ion-thumbnail slot="start">
+            <img alt="Pacote de Plantas" src="https://static.vecteezy.com/system/resources/previews/017/004/605/original/set-of-floral-elements-with-hand-drawn-flowers-and-leaves-flower-graphic-design-herbs-and-wildflowers-collection-illustration-10-eps-vector.jpg" />
+          </ion-thumbnail>
+          <ion-label>Pacote de Plantas</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="pacote()">1000 gemas</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" color="primary" shape="round" class="custom-btn" (click)="voltar()" style="margin-top: 24px;">
+  <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+  Voltar
+</ion-button>
 </ion-content>

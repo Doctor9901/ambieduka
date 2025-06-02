@@ -84,4 +84,7 @@ async segunda() {
   ngOnInit() {
   }
 
+  voltar() {
+    window.history.back();
+  }
 }

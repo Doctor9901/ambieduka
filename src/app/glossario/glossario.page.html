@@ -1,74 +1,76 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Glossário de Plantas</ion-title>
-     <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<ion-card>
-  <ion-card-header>
-    <ion-card-title>Disponível</ion-card-title>
-  </ion-card-header>
+  <ion-card class="card-custom">
+    <ion-card-header>
+      <ion-card-title>Disponível</ion-card-title>
+    </ion-card-header>
 
-  <ion-card-content>
-    <ion-list>
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Clúsia" src="https://th.bing.com/th/id/R.4df71d1198db45222a122e5fc653f49a?rik=w22vTOCnLd%2f3Fw&riu=http%3a%2f%2fwww.plantasonya.com.br%2fwp-content%2fimg%2fClusia-fluminensis44.jpg&ehk=F%2bCNSZX37%2bSpW9qsJcmp1vfyW0HUqOm%2f3cnpDAdskxg%3d&risl=&pid=ImgRaw&r=0" />
-        </ion-thumbnail>
-        <ion-label>Clúsia</ion-label>
-        <ion-button expand="block" (click)="clusiaAlert()">Informações</ion-button>
-      </ion-item>
+    <ion-card-content>
+      <ion-list>
+        <ion-item class="card-item-custom">
+          <ion-thumbnail slot="start">
+            <img alt="Clúsia" src="https://th.bing.com/th/id/R.4df71d1198db45222a122e5fc653f49a?rik=w22vTOCnLd%2f3Fw&riu=http%3a%2f%2fwww.plantasonya.com.br%2fwp-content%2fimg%2fClusia-fluminensis44.jpg&ehk=F%2bCNSZX37%2bSpW9qsJcmp1vfyW0HUqOm%2f3cnpDAdskxg%3d&risl=&pid=ImgRaw&r=0" />
+          </ion-thumbnail>
+          <ion-label>Clúsia</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="clusiaAlert()">Informações</ion-button>
+        </ion-item>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Orquídea Cattleya labiata" src="https://th.bing.com/th/id/R.f04c1b0786c47fe3dcba4854dc677099?rik=Cj%2fIns6644CHwQ&pid=ImgRaw&r=0" />
-        </ion-thumbnail>
-        <ion-label>Orquídea Cattleya labiata</ion-label>
-        <ion-button expand="block" (click)="orquideaAlert()">Informações</ion-button>
-      </ion-item>
+        <ion-item class="card-item-custom">
+          <ion-thumbnail slot="start">
+            <img alt="Orquídea Cattleya labiata" src="https://th.bing.com/th/id/R.f04c1b0786c47fe3dcba4854dc677099?rik=Cj%2fIns6644CHwQ&pid=ImgRaw&r=0" />
+          </ion-thumbnail>
+          <ion-label>Orquídea Cattleya labiata</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="orquideaAlert()">Informações</ion-button>
+        </ion-item>
 
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Abricó-do-pará" src="https://cdn.awsli.com.br/600x450/163/163535/produto/6494373/598656bab0.jpg" />
-        </ion-thumbnail>
-        <ion-label>Abricó-do-pará</ion-label>
-        <ion-button expand="block" (click)="abricoAlert()">Informações</ion-button>
-      </ion-item>
+        <ion-item class="card-item-custom">
+          <ion-thumbnail slot="start">
+            <img alt="Abricó-do-pará" src="https://cdn.awsli.com.br/600x450/163/163535/produto/6494373/598656bab0.jpg" />
+          </ion-thumbnail>
+          <ion-label>Abricó-do-pará</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="abricoAlert()">Informações</ion-button>
+        </ion-item>
 
-      <ion-card-header>
+        <ion-card-header>
           <ion-card-title>Indisponível</ion-card-title>
         </ion-card-header>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>???</ion-label>
-        <ion-button expand="block" (click)="indisponivel1()">Indisponível</ion-button>
-      </ion-item>
+        <ion-item class="card-item-custom" lines="none">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>???</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="indisponivel1()">Indisponível</ion-button>
+        </ion-item>
 
+        <ion-item class="card-item-custom" lines="none">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>???</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="indisponivel2()">Indisponível</ion-button>
+        </ion-item>
 
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>???</ion-label>
-        <ion-button expand="block" (click)="indisponivel2()">Indisponível</ion-button>
-      </ion-item>
-
-      
-      <ion-item lines="none">
-        <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>???</ion-label>
-        <ion-button expand="block" (click)="indisponivel()">Indisponível</ion-button>
-      </ion-item>
-    </ion-list>
-  </ion-card-content>
-</ion-card>
+        <ion-item class="card-item-custom" lines="none">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          </ion-thumbnail>
+          <ion-label>???</ion-label>
+          <ion-button expand="block" class="btn-custom" (click)="indisponivel()">Indisponível</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" color="primary" shape="round" class="custom-btn" (click)="voltar()" style="margin-top: 24px;">
+  <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+  Voltar
+</ion-button>
 </ion-content>

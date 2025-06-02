@@ -83,4 +83,7 @@ export class LojaPage implements OnInit {
   ngOnInit() {
   }
 
+  voltar() {
+    window.history.back();
+  }
 }

@@ -75,4 +75,7 @@ export class GlossarioPage implements OnInit {
 
   ngOnInit() {
   }
+  voltar() {
+    window.history.back();
+}
 }

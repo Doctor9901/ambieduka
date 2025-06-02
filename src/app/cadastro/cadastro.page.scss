@@ -1,0 +1,64 @@
+ion-content {
+  --background: transparent !important;
+  background: transparent !important;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+ion-content::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  background: url('../../assets/logo_ambieduka.png') center center / cover no-repeat;
+  filter: blur(8px) brightness(1.1);
+  opacity: 0.7;
+}
+
+.card-custom, ion-card.card-custom {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(58, 145, 87, 0.10);
+  padding: 24px 12px 18px 12px;
+  margin: 0 auto 24px auto;
+  max-width: 380px;
+  border: 1.5px solid #b8eac7;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 380px; // igual ao max-width do card
+  min-width: 120px;
+  height: auto;
+  display: block;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(58, 145, 87, 0.15);
+  margin: 0 auto;
+}
+
+ion-input.custom-input, ion-textarea.custom-input {
+  --background: #f3f8f4;
+  --border-radius: 12px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-size: 1.05em;
+  border: 1.5px solid #b8eac7;
+  margin-bottom: 8px;
+}
+
+ion-item {
+  --background: transparent;
+  --highlight-background: transparent;
+  --min-height: 48px;
+  border: none;
+  margin-bottom: 8px;
+}

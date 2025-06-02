@@ -9,34 +9,37 @@
   <br><br>
 
   <ion-item>
-    <ion-input label="Usuário:" placeholder="Nome"></ion-input>
+    <ion-input class="custom-input" label="Usuário:" placeholder="Nome"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-input label="Email:" type="email" placeholder="email@domain.com"></ion-input>
+    <ion-input class="custom-input" label="Email:" type="email" placeholder="email@domain.com"></ion-input>
   </ion-item>
-
-    <ion-item>
-      <ion-input label="Password" type="password" value="password"></ion-input>
-    </ion-item>
 
   <ion-item>
-    <ion-input label="Telefone:" type="tel" placeholder="888-888-8888"></ion-input>
+    <ion-input class="custom-input" label="Password" type="password" value="password"></ion-input>
   </ion-item>
 
-<ion-card-header>
+  <ion-item>
+    <ion-input class="custom-input" label="Telefone:" type="tel" placeholder="888-888-8888"></ion-input>
+  </ion-item>
+
+  <ion-card-header>
     <ion-card-title>Foto de Perfil</ion-card-title>
   </ion-card-header>
   <ion-card-content>
     <ion-list>
-      <ion-item>
+      <ion-item class="card-item-custom">
         <ion-thumbnail slot="start">
-          <img alt="boitata" src="https://contosdetodososcantos.com.br/wp-content/uploads/2023/05/Boitata-uma-das-maiores-lendas-do-folclore-brasileiro.jpg" />
+          <img class="avatar-custom" alt="boitata" src="https://contosdetodososcantos.com.br/wp-content/uploads/2023/05/Boitata-uma-das-maiores-lendas-do-folclore-brasileiro.jpg" />
         </ion-thumbnail>
         <ion-label>Usuário</ion-label>
-        <ion-button expand="block" (click)="imagens()">Mudar Avatar</ion-button>
+        <ion-button class="btn-custom" expand="block" (click)="imagens()">Mudar Avatar</ion-button>
       </ion-item>
-
     </ion-list>
   </ion-card-content>
+  <ion-button expand="block" color="primary" shape="round" (click)="voltar()" style="margin-top: 24px;">
+  <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+  Voltar
+</ion-button>
 </ion-content>

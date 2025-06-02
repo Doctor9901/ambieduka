@@ -7,27 +7,14 @@
 <ion-content [fullscreen]="true">
   <br><br>
   <!-- perguntas.page.html -->
-  <div *ngIf="carregando">Carregando...</div>
-  <div *ngIf="erro">{{ erro }}</div>
-  <div *ngIf="quizFinalizado">Quiz finalizado! Pontuação: {{ pontuacao }}</div>
-  <!-- perguntas.page.html -->
- <div *ngIf="perguntas.length && !carregando && !erro && !quizFinalizado">
   <div *ngIf="perguntas.length">
     <h2>{{ perguntas[perguntaAtual].texto }}</h2>
     <ion-button *ngFor="let alt of perguntas[perguntaAtual].alternativas; let i = index"
-                [attr.aria-label]="'Alternativa ' + (i+1) + ': ' + alt"
-                tabindex="0"
-                (keyup.enter)="responder(i)"
                 expand="block"
                 (click)="responder(i)">
       {{ alt }}
     </ion-button>
     <p>Pergunta {{ perguntaAtual + 1 }} de {{ perguntas.length }}</p>
     <p>Pontuação: {{ pontuacao }}</p>
-    <p>Gemas: {{ gemas }}</p>
-    <div class="animacao-semente" [ngClass]="{'crescendo': acertou}">
-      <img src="assets/semente.png" alt="Semente" />
-    </div>
   </div>
-</div>
 </ion-content>

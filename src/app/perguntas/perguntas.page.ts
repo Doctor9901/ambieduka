@@ -1,11 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-
-interface Pergunta {
-  texto: string;
-  alternativas: string[];
-  respostaCorreta: number;
-}
+import { PERGUNTAS } from './perguntas.data';
 
 @Component({
   selector: 'app-perguntas',
@@ -14,14 +9,6 @@ interface Pergunta {
   standalone: false,
 })
 export class PerguntasPage implements OnInit {
-  carregando = true;
-  erro = '';
-  quizFinalizado = false;
-
-  gemas = 0; // Adicione aqui
-  respostaSelecionada: number | null = null;
-  acertou = false;
-
   perguntas: Pergunta[] = [
     {
       texto: 'O que é germinação?',
@@ -146,31 +133,31 @@ export class PerguntasPage implements OnInit {
   ];
 
   perguntaAtual = 0;
-  pontuacao = 0;
+  respostaSelecionada: number | null = null;
+  resultado: boolean | null = null;
+
+  // Lista única das etapas, na ordem de aparição
+  etapas = Array.from(new Set(this.perguntas.map(p => p.etapa)));
 
   constructor(private alertController: AlertController) {}
 
   ngOnInit() {}
- 
-  async responder(alternativaIdx: number) {
-  this.respostaSelecionada = alternativaIdx;
-  const pergunta = this.perguntas[this.perguntaAtual];
-  this.acertou = alternativaIdx === pergunta.respostaCorreta;
-  if (this.acertou) {
-    this.pontuacao++;
-    this.gemas += 5;
-  }
 
-  const alert = await this.alertController.create({
-    header: this.acertou ? 'Você Acertou!' : 'Você Errou!',
-    message: this.acertou
-      ? 'Parabéns, resposta correta.'
-      : `A resposta correta é: ${pergunta.alternativas[pergunta.respostaCorreta]}`,
-    buttons: [{
-      text: this.perguntaAtual < this.perguntas.length - 1 ? 'Próxima' : 'Finalizar',
-      handler: () => this.proximaPergunta()
-    }]
-  });
+  async responder(alternativaIdx: number) {
+    const pergunta = this.perguntas[this.perguntaAtual];
+    const acertou = alternativaIdx === pergunta.respostaCorreta;
+    if (acertou) this.pontuacao++;
+
+    const alert = await this.alertController.create({
+      header: acertou ? 'Você Acertou!' : 'Você Errou!',
+      message: acertou
+        ? 'Parabéns, resposta correta.'
+        : `A resposta correta é: ${pergunta.alternativas[pergunta.respostaCorreta]}`,
+      buttons: [{
+        text: this.perguntaAtual < this.perguntas.length - 1 ? 'Próxima' : 'Finalizar',
+        handler: () => this.proximaPergunta()
+      }]
+    });
 
   await alert.present();
 }
@@ -179,19 +166,21 @@ export class PerguntasPage implements OnInit {
   proximaPergunta() {
     if (this.perguntaAtual < this.perguntas.length - 1) {
       this.perguntaAtual++;
+      this.respostaSelecionada = null;
+      this.resultado = null;
     } else {
-      this.finalizarQuiz();
+      // Opcional: mostrar mensagem de conclusão
     }
   }
 
-  async finalizarQuiz() {
-    const alert = await this.alertController.create({
-      header: 'Quiz Finalizado!',
-      message: `Sua pontuação: ${this.pontuacao} de ${this.perguntas.length}`,
-      buttons: ['OK']
-    });
-    await alert.present();
-    this.perguntaAtual = 0;
-    this.pontuacao = 0;
+  letraAlternativa(i: number): string {
+    return String.fromCharCode(65 + i); // 65 = 'A'
   }
+
+  numeroEtapa(etapa: string): number {
+    return this.etapas.indexOf(etapa) + 1;
+  }
+  voltar() {
+    window.history.back();
+}
 }

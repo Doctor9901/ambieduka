@@ -16,5 +16,8 @@ export class EdicaoPage implements OnInit {
 imagens() {
   this.route.navigate(['/imagens'])
 }
+voltar() {
+  window.history.back();
+}
 
 }

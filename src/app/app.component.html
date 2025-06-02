@@ -1,26 +1,39 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu *ngIf="!isAuthRoute()" contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Menu</ion-list-header>
+          <ion-list-header>
+            <img [src]="usuarioAvatar" alt="Avatar" class="avatar-img" />
+            <div>
+              <div style="font-weight:bold;">Olá!</div>
+              <div style="font-size:0.9em;">{{ usuarioNome }}</div>
+            </div>
+          </ion-list-header>
           
 
           @for (p of appPages; track p; let i = $index) {
             <ion-menu-toggle auto-hide="false">
-              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected" class="card-item-custom">
                 <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
             </ion-menu-toggle>
           }
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item lines="none" detail="false" (click)="logout()" class="card-item-custom sair-item">
+              <ion-icon aria-hidden="true" slot="start" name="log-out-outline"></ion-icon>
+              <ion-label>Sair</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
 
         <ion-list id="labels-list">
           <ion-list-header></ion-list-header>
 
           @for (label of labels; track label) {
-            <ion-item lines="none">
+            <ion-item lines="none" class="card-item-custom">
               <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
               <ion-label>{{ label }}</ion-label>
             </ion-item>

@@ -35,3 +35,162 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+:root {
+  /* Paleta de cores */
+  --color-primary: #3a9157;
+  --color-primary-dark: #27663b;
+  --color-secondary: #b8eac7;
+  --color-bg: #eafaf0;
+  --color-white: #fff;
+  --color-error: #e53935;
+  --color-text: #23402a;
+  --color-card: #ffffff;
+  --color-input-bg: #f3f8f4;
+
+  /* Tipografia */
+  --font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  --font-size-title: 2rem;
+  --font-size-subtitle: 1.2rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.9rem;
+
+  /* Bordas e espaçamentos */
+  --border-radius: 16px;
+  --input-radius: 10px;
+  --button-radius: 12px;
+  --card-padding: 24px;
+  --gap: 16px;
+  --shadow: 0 2px 8px rgba(60, 120, 80, 0.07);
+}
+
+body {
+  background: var(--color-bg);
+  font-family: var(--font-family);
+  color: var(--color-text);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.card,
+.card-custom,
+ion-card.card-custom {
+  background: var(--color-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md); // sombra média para destacar
+  padding: var(--card-padding);
+  margin-bottom: var(--gap);
+}
+
+input, .input {
+  background: var(--color-input-bg);
+  border-radius: var(--input-radius);
+  border: none;
+  padding: 12px;
+  font-size: var(--font-size-body);
+  margin-bottom: var(--gap);
+}
+
+button, .btn {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--button-radius);
+  padding: 12px 0;
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:active, .btn:active {
+  background: var(--color-primary-dark);
+}
+
+.btn-custom,
+ion-button.btn-custom {
+  --background: var(--btn-gradient);
+  --color: #fff;
+  --border-radius: var(--btn-radius);
+  --box-shadow: var(--btn-shadow);
+  --padding-top: 0;
+  --padding-bottom: 0;
+  font-family: var(--btn-font);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  min-height: 48px;
+  transition: filter 0.2s;
+  filter: brightness(1);
+}
+.btn-custom:active,
+ion-button.btn-custom:active {
+  filter: brightness(0.95);
+}
+
+.error {
+  color: var(--color-error);
+  font-size: var(--font-size-small);
+  margin-top: 4px;
+}
+
+.icon-btn {
+  background: var(--color-secondary);
+  border-radius: 50%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::-webkit-input-placeholder { color: #8cae9e; }
+:-moz-placeholder { color: #8cae9e; }
+::-moz-placeholder { color: #8cae9e; }
+:-ms-input-placeholder { color: #8cae9e; }
+
+/* Cards customizados */
+.card-custom,
+ion-card.card-custom {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  background: var(--color-card);
+  padding: var(--card-padding);
+  margin-bottom: var(--gap);
+}
+
+/* Itens de lista customizados */
+ion-item.card-item-custom {
+  border-radius: var(--border-radius);
+  margin-bottom: var(--space-sm);
+  background: var(--color-input-bg);
+  border: var(--border-width) solid var(--border-color);
+}
+
+/* Inputs customizados */
+ion-input.custom-input,
+ion-textarea.custom-input {
+  --background: var(--color-input-bg);
+  --border-radius: var(--input-radius);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+}
+
+/* Avatar customizado */
+.avatar-custom {
+  border-radius: 50%;
+  box-shadow: var(--shadow-xs);
+  border: var(--avatar-border);
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  object-fit: cover;
+}
+
+/* Tipografia */
+h1, .title-large { font-size: var(--font-size-title); font-weight: 700; }
+h2, .title-medium { font-size: 1.5rem; font-weight: 600; }
+h3, .title-small { font-size: 1.2rem; font-weight: 500; }

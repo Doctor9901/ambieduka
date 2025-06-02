@@ -117,3 +117,61 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.sair-item {
+  margin-top: 24px;
+  color: var(--ion-color-danger);
+  --color: var(--ion-color-danger);
+  --background: #fff0f0;
+  font-weight: bold;
+}
+
+ion-list-header {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+ion-avatar {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  border: 2px solid var(--color-primary, #3a9157);
+  background: #fff;
+}
+
+ion-item.card-item-custom,
+ion-item.sair-item {
+  border-radius: 8px;
+  margin-bottom: 6px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+// Efeito de hover para todos os itens do menu
+ion-item.card-item-custom:hover,
+ion-item.sair-item:hover {
+  --background: var(--color-primary-dark, #27663b);
+  color: #fff;
+  --color: #fff;
+}
+
+ion-item.sair-item:hover {
+  --background: var(--ion-color-danger, #eb445a);
+  color: #fff;
+  --color: #fff;
+}
+
+.avatar-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary, #3a9157);
+  object-fit: cover;
+  background: #fff;
+  margin-right: 12px;
+}

@@ -14,14 +14,20 @@ export class ImagensPage implements OnInit {
   ngOnInit() {
   }
 curupira() {
-  this.route.navigate(['/curupira'])
+  localStorage.setItem('avatar', 'https://th.bing.com/th/id/OIP.GwKvkFOuvg1p44_Tw6e4lwHaEK?rs=1&pid=ImgDetMain');
+  this.route.navigate(['/curupira']);
 }
 
 caipora() {
-  this.route.navigate(['/caipora'])
+  localStorage.setItem('avatar', 'https://th.bing.com/th/id/OIP.TxElwfVun2oHnlnAfieVFQAAAA?rs=1&pid=ImgDetMain');
+  this.route.navigate(['/caipora']);
 }
 
 boitata() {
-  this.route.navigate(['/boitata'])
+  localStorage.setItem('avatar', 'https://contosdetodososcantos.com.br/wp-content/uploads/2023/05/Boitata-uma-das-maiores-lendas-do-folclore-brasileiro.jpg');
+  this.route.navigate(['/boitata']);
+}
+voltar() {
+  window.history.back();
 }
 }

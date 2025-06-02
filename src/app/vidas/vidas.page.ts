@@ -12,5 +12,7 @@ export class VidasPage implements OnInit {
 
   ngOnInit() {
   }
-
+  voltar() {
+    window.history.back();
+  }
 }

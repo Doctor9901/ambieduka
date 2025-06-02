@@ -12,5 +12,8 @@ export class HistoricoPage implements OnInit {
 
   ngOnInit() {
   }
+  voltar() {
+    window.history.back();
+  }
 
 }
