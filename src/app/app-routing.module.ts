@@ -113,8 +113,7 @@ const routes: Routes = [
   },
   {
     path: 'boitata',
-    loadChildren: () => import('./boitata/boitata.module').then( m => m.BoitataPageModule),
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./boitata/boitata.module').then( m => m.BoitataPageModule)
   }
 ];
 

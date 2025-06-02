@@ -5,29 +5,16 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="quiz-container">
-    <br><br>
-    <div *ngIf="perguntas[perguntaAtual] as pergunta">
-      <!-- Mostra a etapa/fase atual -->
-      <ion-item lines="none">
-        <ion-label color="primary">
-          <strong>Etapa {{ numeroEtapa(pergunta.etapa) }}:</strong> {{ pergunta.etapa }}
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>{{ pergunta.pergunta }}</ion-label>
-      </ion-item>
-      <ion-list>
-        <ion-item *ngFor="let alt of pergunta.alternativas; let i = index">
-          <ion-button class="btn-custom" expand="block" (click)="selecionarResposta(i)">
-            {{ letraAlternativa(i) }}. {{ alt }}
-          </ion-button>
-        </ion-item>
-      </ion-list>
-    </div>
-    <ion-button expand="block" color="primary" shape="round" class="custom-btn" (click)="voltar()" style="margin-top: 24px;">
-      <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
-      Voltar
+  <br><br>
+  <!-- perguntas.page.html -->
+  <div *ngIf="perguntas.length">
+    <h2>{{ perguntas[perguntaAtual].texto }}</h2>
+    <ion-button *ngFor="let alt of perguntas[perguntaAtual].alternativas; let i = index"
+                expand="block"
+                (click)="responder(i)">
+      {{ alt }}
     </ion-button>
+    <p>Pergunta {{ perguntaAtual + 1 }} de {{ perguntas.length }}</p>
+    <p>Pontuação: {{ pontuacao }}</p>
   </div>
 </ion-content>
