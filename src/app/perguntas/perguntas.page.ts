@@ -14,6 +14,14 @@ interface Pergunta {
   standalone: false,
 })
 export class PerguntasPage implements OnInit {
+  carregando = true;
+  erro = '';
+  quizFinalizado = false;
+
+  gemas = 0; // Adicione aqui
+  respostaSelecionada: number | null = null;
+  acertou = false;
+
   perguntas: Pergunta[] = [
     {
       texto: 'O que é germinação?',
@@ -143,25 +151,30 @@ export class PerguntasPage implements OnInit {
   constructor(private alertController: AlertController) {}
 
   ngOnInit() {}
-
+ 
   async responder(alternativaIdx: number) {
-    const pergunta = this.perguntas[this.perguntaAtual];
-    const acertou = alternativaIdx === pergunta.respostaCorreta;
-    if (acertou) this.pontuacao++;
-
-    const alert = await this.alertController.create({
-      header: acertou ? 'Você Acertou!' : 'Você Errou!',
-      message: acertou
-        ? 'Parabéns, resposta correta.'
-        : `A resposta correta é: ${pergunta.alternativas[pergunta.respostaCorreta]}`,
-      buttons: [{
-        text: this.perguntaAtual < this.perguntas.length - 1 ? 'Próxima' : 'Finalizar',
-        handler: () => this.proximaPergunta()
-      }]
-    });
-
-    await alert.present();
+  this.respostaSelecionada = alternativaIdx;
+  const pergunta = this.perguntas[this.perguntaAtual];
+  this.acertou = alternativaIdx === pergunta.respostaCorreta;
+  if (this.acertou) {
+    this.pontuacao++;
+    this.gemas += 5;
   }
+
+  const alert = await this.alertController.create({
+    header: this.acertou ? 'Você Acertou!' : 'Você Errou!',
+    message: this.acertou
+      ? 'Parabéns, resposta correta.'
+      : `A resposta correta é: ${pergunta.alternativas[pergunta.respostaCorreta]}`,
+    buttons: [{
+      text: this.perguntaAtual < this.perguntas.length - 1 ? 'Próxima' : 'Finalizar',
+      handler: () => this.proximaPergunta()
+    }]
+  });
+
+  await alert.present();
+}
+// ...existing code...
 
   proximaPergunta() {
     if (this.perguntaAtual < this.perguntas.length - 1) {

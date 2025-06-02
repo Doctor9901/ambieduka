@@ -1,10 +1,12 @@
-const express = require('express');
-const router = express.Router();
-const PerguntaController = require('./PerguntaController');
+// backend/src/routes/perguntas.ts
+import { Router } from 'express';
+import { PrismaClient } from '@prisma/client';
+const router = Router();
+const prisma = new PrismaClient();
 
-router.get('/', PerguntaController.listar);
-router.post('/', PerguntaController.criar);
-router.put('/:id', PerguntaController.editar);
-router.delete('/:id', PerguntaController.excluir);
+router.get('/', async (req, res) => {
+  const perguntas = await prisma.pergunta.findMany();
+  res.json(perguntas);
+});
 
-module.exports = router;
+export default router;

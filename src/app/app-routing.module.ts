@@ -90,7 +90,12 @@ const routes: Routes = [
   {
     path: 'boitata',
     loadChildren: () => import('./boitata/boitata.module').then( m => m.BoitataPageModule)
-  }
+  },
+  {
+    path: 'quiz',
+    loadChildren: () => import('./quiz/quiz.module').then( m => m.QuizPageModule)
+  },
+  
 ];
 
 @NgModule({
