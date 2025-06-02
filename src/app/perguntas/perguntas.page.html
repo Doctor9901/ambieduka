@@ -6,12 +6,15 @@
 
 <ion-content [fullscreen]="true">
   <br><br>
-  <ion-item>
-    <ion-input label="1.O que a Planta precisa?" [readonly]="true"></ion-input>
-  </ion-item>
-  <ion-button (click)="pergunta1()">A.Refrigerante</ion-button>
-  <ion-button (click)="pergunta1_1()">B.Sol</ion-button>
-
-
-
+  <!-- perguntas.page.html -->
+  <div *ngIf="perguntas.length">
+    <h2>{{ perguntas[perguntaAtual].texto }}</h2>
+    <ion-button *ngFor="let alt of perguntas[perguntaAtual].alternativas; let i = index"
+                expand="block"
+                (click)="responder(i)">
+      {{ alt }}
+    </ion-button>
+    <p>Pergunta {{ perguntaAtual + 1 }} de {{ perguntas.length }}</p>
+    <p>Pontuação: {{ pontuacao }}</p>
+  </div>
 </ion-content>
