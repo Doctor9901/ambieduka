@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Edição</ion-title>
+    <ion-menu-button></ion-menu-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br><br>
+
+  <ion-item>
+    <ion-input label="Usuário:" placeholder="Nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Email:" type="email" placeholder="email@domain.com"></ion-input>
+  </ion-item>
+
+    <ion-item>
+      <ion-input label="Password" type="password" value="password"></ion-input>
+    </ion-item>
+
+  <ion-item>
+    <ion-input label="Telefone:" type="tel" placeholder="888-888-8888"></ion-input>
+  </ion-item>
+
+<ion-card-header>
+    <ion-card-title>Foto de Perfil</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="boitata" src="https://contosdetodososcantos.com.br/wp-content/uploads/2023/05/Boitata-uma-das-maiores-lendas-do-folclore-brasileiro.jpg" />
+        </ion-thumbnail>
+        <ion-label>Usuário</ion-label>
+        <ion-button expand="block" (click)="imagens()">Mudar Avatar</ion-button>
+      </ion-item>
+
+    </ion-list>
+  </ion-card-content>
+</ion-content>

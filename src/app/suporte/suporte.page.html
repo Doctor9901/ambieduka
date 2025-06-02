@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Suporte</ion-title>
+     <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br><br>
+    <ion-item>
+      <ion-input label="Nome:"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Sobrenome:"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-toggle>
+        <ion-label>Ativa Notificações</ion-label>
+      </ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea label="Comentário" labelPlacement="floating" rows="5"></ion-textarea>
+    </ion-item>
+    <ion-button expand="block" (click)="suporte()">Enviar Feedback</ion-button>
+
+  <ion-note color="medium" class="ion-margin-horizontal">
+    Seus comentários serão mantidos anônimos e serão usados apenas para melhorar a confiabilidade de nossos produtos.
+  </ion-note>
+</ion-content>

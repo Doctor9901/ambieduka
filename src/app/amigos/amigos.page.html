@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Amigos</ion-title>
+    <ion-buttons slot="primary" (click)="adicionar()">
+      <ion-button>Procurar
+        <ion-icon slot="end" name="add">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+     <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br><br>
+  <ion-card-header>
+    <ion-card-title>Online</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Jogador 1</ion-label>
+        <ion-button expand="block">Remover</ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Jogador 2</ion-label>
+        <ion-button expand="block">Remover</ion-button>
+      </ion-item>
+
+      <ion-card-header>
+        <ion-card-title>offline</ion-card-title>
+      </ion-card-header>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Jogador 3</ion-label>
+        <ion-button expand="block">Remover</ion-button>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Jogador 4</ion-label>
+        <ion-button expand="block">Remover</ion-button> 
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-content>

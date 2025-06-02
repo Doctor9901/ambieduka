@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+  
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+//banco de Perguntas
+model Pergunta {
+  id               Int     @id @default(autoincrement())
+  etapa            String
+  pergunta         String
+  alternativa_a    String
+  alternativa_b    String
+  alternativa_c    String
+  alternativa_d    String
+  alternativa_e    String
+  resposta_correta String  @db.Char(1) // Letra da resposta correta (ex: A, B, C...)
+
+  @@map("Perguntas") // Nome da tabela no banco
+}
